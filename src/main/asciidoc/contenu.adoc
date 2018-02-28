@@ -1,0 +1,74 @@
+= Université sur Keycloak
+
+== The Big Picture
+
+=== Pourquoi déléguer la sécurité ?
+
+=== Les différents protocoles
+
+==== OpenID Connect
+
+===== Focus sur JWT
+
+==== SAML
+
+=== Qu'est ce que Keycloak ?
+
+== Installation et déploiement de  Keycloak
+
+=== Depuis les distributions
+
+=== Depuis les sources
+
+=== A l'aide des images Docker
+
+== Configuration de Keycloak
+
+=== Configuration des Clients
+
+=== Différents types de clients
+
+=== Redirect URLs , CORS etc …
+
+=== Creation de roles
+
+==== Realm Roles
+
+==== Client Roles
+
+==== Groupes
+
+=== Création des utilisateurs
+
+==== Politique sur les mots de passe
+
+=== OTP ? 
+
+== Sécurisation de son application
+
+=== Java EE / Jakarta EE
+
+=== Installation de l'adaptateur
+
+=== JavaScript / Web Apps
+
+=== Spring Boot
+
+=== NodeJS
+
+=== Les autres adaptateurs
+
+== Courtage / Broker
+
+=== Réseaux Sociaux
+
+=== LDAP
+
+== Etendre Keycloak
+
+=== Big Picture of the different SPIs
+
+=== Création de sa propre extension
+
+=== Création de son propre thème
+

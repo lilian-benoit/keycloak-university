@@ -1,0 +1,7 @@
+= Prerequis pour la session
+
+Liste des produits 
+
+* [ ] java 8
+
+* [ ] Keycloak 3.4.3
