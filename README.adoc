@@ -1,2 +1,4 @@
 # keycloak-university
 Préparation de la conférence sur Keycloack (Format University)
+
+Lien vers les https://github.com/lilian-benoit/keycloak-university-exos[exercices]
