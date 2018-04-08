@@ -1,0 +1,3 @@
+* Thomas nous envois un lien pour la génération de slides par asciidoc. 
+
+* Je fais une liste des softs/archives que doivent etre sur la machine. 

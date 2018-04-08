@@ -1,74 +1,110 @@
 = Université sur Keycloak
 
-== The Big Picture
+== Pourquoi déléguer sa sécurité ? 
+(Seb)
 
-=== Pourquoi déléguer la sécurité ?
+== Qu'est ce que Keycloak ? 
+(Seb)
 
-=== Les différents protocoles
+== Les différents protocoles
 
-==== OpenID Connect
+=== OpenID Connect 
+(Thomas)
 
-===== Focus sur JWT
+- OpenId Connect / Oauth 2
+- JWT 
 
-==== SAML
-
-=== Qu'est ce que Keycloak ?
+=== SAML
+(Lilian)
 
 == Installation et déploiement de  Keycloak
 
-=== Depuis les distributions
+=== Les différentes options
+(Seb)
 
-=== Depuis les sources
+ - Depuis les distributions
 
-=== A l'aide des images Docker
+ - Depuis les sources
 
-== Configuration de Keycloak
+ - A l'aide des images Docker
 
-=== Configuration des Clients
+[Pendant la session, utilisation en mode distribution]
 
-=== Différents types de clients
+== Demo Waaouh
+(Thomas)
+
+[Point de départ : Application SpringBoot existant sans sécurité]
+
+- Creation d'un realm
+
+- Creation d'un Client / User
+
+- Appli Spring Boot que tu sécurises
+
+-> effet wow
+
+
+== Deuxième passe en entrant dans les details
+
+
+=== Tweak de l'écran de login
+(Seb)
+
+=== Différents type de client
+(Lilian) 
+- Client PUBLIC (Client redirection)
+- Client CONFIDENTIEL, passer à l'action
+- Client BEARER-ONLY (mise en action pour le WS REST)
+
+slides et demo du client Confidential
 
 === Redirect URLs , CORS etc …
+(Lilian)
 
-=== Creation de roles
+=== Les roles
+(Lilian)
 
-==== Realm Roles
+Demo, mise en action
 
-==== Client Roles
+=== Groupes, Création des utilisateurs 
+(Lilian)
 
-==== Groupes
+? Demo de l'application account 
 
-=== Création des utilisateurs
+=== Password policies / OTP / Brute force Detection
+(Thomas)
 
-==== Politique sur les mots de passe
 
-=== OTP ? 
+== Les Adaptateurs
+(Seb)
 
-== Sécurisation de son application
+=== Survol des différents adaptateurs
 
-=== Java EE / Jakarta EE
+=== Focus sur l'adapter Wildfly
 
-=== Installation de l'adaptateur
+- Installation de l'adaptateur
+- Securisation d'un service REST Java EE -> demo
 
-=== JavaScript / Web Apps
+=== Focus sur l'adaptar JS
 
-=== Spring Boot
+- Demo de l'appli web
 
-=== NodeJS
-
-=== Les autres adaptateurs
 
 == Courtage / Broker
+(Thomas)
 
-=== Réseaux Sociaux
-
-=== LDAP
+- Demo login avec github
+- Demo LDAP
 
 == Etendre Keycloak
+(Lilian)
 
-=== Big Picture of the different SPIs
+- Survol des différents SPI
+- Créer son theme (Ca serait bien de faire un thème Devoxx) 
+- Exemple d'une extension REST simple
 
-=== Création de sa propre extension
+Exemple :
+https://github.com/stianst/keycloak-experimental/tree/master/token-validation
 
-=== Création de son propre thème
+
 

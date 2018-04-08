@@ -1,0 +1,11 @@
+
+== Avant la session
+
+* Prévoir des clefs USB avec les programmes. Ceux qui veulent pourront reproduire les demos.
+** Distribution
+** Repo maven
+
+
+== Pendant la session
+
+* Un seul laptop (celui de Thomas) :) 

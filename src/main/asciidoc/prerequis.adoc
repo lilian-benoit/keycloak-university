@@ -5,3 +5,7 @@ Liste des produits
 * [ ] java 8
 
 * [ ] Keycloak 3.4.3
+
+Outils possibles
+
+* Utilisation de AsciidocFX (https://asciidocfx.com/)
