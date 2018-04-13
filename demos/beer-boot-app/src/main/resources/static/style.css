@@ -1,0 +1,20 @@
+body {
+    padding-top: 5rem;
+}
+.welcome {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+.beers {
+    list-style: none;
+}
+.beer {
+    display: inline;
+}
+.beer img {
+    height: 200px;
+    max-width: 200px;
+}
+
+
+

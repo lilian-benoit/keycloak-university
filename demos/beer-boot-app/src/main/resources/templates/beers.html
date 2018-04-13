@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Beer boot app</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/">BeerBootApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-md-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/beers">Beers</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" sec:authentication="name">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                    <form class="dropdown-item" action="/sso/logout" id="logout-form" style="display:none" method="post">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                    </form>
+                    <a class="dropdown-item" href="#" onclick="document.getElementById('logout-form').submit();">Logout</a>
+                    <a class="dropdown-item" href="/change-password">Change password</a>
+                </div>
+            </li>
+            <li class="nav-item" sec:authorize="isAnonymous()">
+                <a class="nav-link" href="/sso/login">Login</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main role="main" class="container">
+
+    <div>
+        <h1 class="welcome">Beers</h1>
+        <div class="row">
+            <div class="col-sm-3" th:each="beer : ${beers}">
+                <div class="card beer" style="width: 18rem;">
+                    <h5 class="card-header" th:text="${beer.get('name')}"></h5>
+                    <img class="card-img-top" th:src="${beer.get('image')}" th:alt="${beer.get('name')}"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!-- Bootstrap core JavaScript -->
+<script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.0.0-2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

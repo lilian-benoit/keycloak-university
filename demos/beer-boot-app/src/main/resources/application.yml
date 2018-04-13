@@ -1,0 +1,9 @@
+server:
+  port: 8888
+
+keycloak:
+  auth-server-url: http://localhost:8080/auth
+  realm: devoxx
+  public-client: true
+  resource: beer-boot-app
+  principal-attribute: name
