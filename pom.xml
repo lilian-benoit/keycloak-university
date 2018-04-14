@@ -16,6 +16,12 @@
 		<jruby.version>1.7.20.1</jruby.version>
 	</properties>
 
+	<modules>
+		<module>demos/beer-boot-app</module>
+		<module>demos/beer-rest</module>
+		<module>demos/beer-web-app</module>
+	</modules>
+
 	<build>
 		<plugins>
 			<plugin>
