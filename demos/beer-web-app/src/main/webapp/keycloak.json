@@ -1,0 +1,7 @@
+{
+  "realm": "devoxx",
+  "auth-server-url": "http://localhost:8080/auth",
+  "ssl-required": "external",
+  "resource": "beer-web",
+  "public-client": true
+}
