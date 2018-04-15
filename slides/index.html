@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Awesome Presentation</title>
+    <title>Keycloak University</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -337,7 +337,7 @@ class: middle, light
 
 # OpenID Connect
 
-OpenID Connnect = Oauth2 + IDToken + JWT +
+OpenID Connect = Oauth2 + IDToken + JWT +
 * JSON Web Key (JWK)
 * Discovery
 * Front channel logout
@@ -447,6 +447,84 @@ Dilemme: vérifier régulièrement les droits sans recommencer la procédure ini
  "token_type": "bearer",
  "id_token": "eyJhbGciOiJSUzI1NiIsInR......."
 }
+```
+
+---
+
+class: middle, light
+
+# SAML 2.0
+> Protocole ouvert et standardisé pour l'échange des informations d'authentification et d'autorisation entre des entités
+
+
+---
+
+class: middle, light
+
+# SAML 2.0
+> Security Assertion Markup Language
+
+Basé sur XML
+
+Standard approuvé par le consortium ![https://wiki.oasis-open.org/security/FrontPage](assets/images/oasis_2004logo.gif)
+* SAML 1.0 - Novembre 2002
+* SAML 1.1 - Novembre 2003
+* SAML 2.0 - Mars     2005
+
+---
+
+class: middle, light
+
+# SAML 2.0
+
+Deux rôles :
+
+* SP (Service Provider) est un fournisseur de service
+* IdP (identity Provider) est un fournisseur d'identité
+
+---
+
+class: middle, center, full
+
+![SAML Protocol](assets/images/saml_protocol.png)
+
+---
+
+class: middle, light
+
+# Avantages de SAML 2.0
+
+* Web SSO
+* Autorisation basée sur les attributs
+* Fédération d'identité
+* Pas limité au protocole HTTP
+
+---
+
+class: middle, light
+
+# Concepts de SAML 2.0
+
+* Assertions
+* Protocols
+* Bindings
+* Profiles
+
+---
+class: middle, light
+
+Exemple d'assertion :
+```xml
+<saml:Assertion ...>.
+  <saml:Issuer ...>https://aai6login.example.org/idp/shibboleth</saml:Issuer>
+  <saml:Subject ...>
+     <saml:NameID ....>_e7b68a04488f715cda642fbdd90099f</saml:NameID>
+  </saml:Subject>
+  <saml:AuthnStatement ....>.....</saml:AuthnStatement>
+  <saml:AttributeStatement ...>
+       [...] (Attributes)
+  </saml:AttributeStatement>
+</saml:Assertion>
 ```
 
     </textarea>
