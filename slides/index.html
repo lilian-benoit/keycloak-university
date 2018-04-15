@@ -448,7 +448,6 @@ Dilemme: vérifier régulièrement les droits sans recommencer la procédure ini
  "id_token": "eyJhbGciOiJSUzI1NiIsInR......."
 }
 ```
-
 ---
 
 class: middle, light
@@ -526,6 +525,75 @@ Exemple d'assertion :
   </saml:AttributeStatement>
 </saml:Assertion>
 ```
+---
+class: middle, light
+
+# Les adaptateurs 
+
+* Sécurisent les applications et communiquent avec Keycloak
+* S'intègrent au système de sécurité existant
+* Configuration standardisée
+---
+class: middle, light
+
+```
+{
+  "auth-server-url": "http://localhost:8080/auth",
+  "realm": "devoxx",
+  "resource": "beer-rest",
+  "bearer-only": true,
+  "ssl-required": "external", 
+  "enable-cors": true
+}
+```
+---
+class: middle, light
+
+# Que font-ils ?
+
+* Gestion des Redirect (ou pas)
+* Vérification des signatures
+* Vérifications des Claims
+
+---
+class: middle, light
+
+# Requête entrante 
+
+* Le `path` est-il soumis à une contrainte de sécurité ?
+  * Y'a t-il un Header `authorization` ? 
+---
+class: middle, light
+
+# To Redirect or not to Redirect ?  
+
+* Cas 1 : l'header `authorization` n'est pas présent
+  * Le client est-il `confidential` ou `public` ?
+   
+     Echange éventuel du secret puis la redirection est initiée 
+  * Le client est `bearer-only` 
+    
+       => `unauthorized`      
+---
+class: middle, light
+
+* Cas 2 : l'header `authorization` est présent
+
+  * La signature est-elle valide ? 
+  * Le token est-il expiré (_exp_) ?
+  * Vérification de l'`issuer` (_iss_)
+  * Vérification de l'`audience` (_aud_) 
+  * Matching éventuel du `not-before`
+
+---
+class: middle, light
+
+* Adaptateurs Java EE / Servlet containers
+* Adaptateur Spring Boot / Spring Security
+* Adaptateur NodeJS
+* Adaptateur Javascript
+* Servlet Filter
+* Proxy 
 
     </textarea>
     <script src="assets/js/remark.min.js" type="text/javascript">
