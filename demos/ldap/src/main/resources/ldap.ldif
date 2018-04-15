@@ -1,0 +1,69 @@
+dn: dc=devoxx,dc=fr
+objectclass: dcObject
+objectclass: organization
+o: Keycloak
+dc: Keycloak
+
+dn: ou=People,dc=devoxx,dc=fr
+objectclass: top
+objectclass: organizationalUnit
+ou: People
+
+dn: ou=Roles,dc=devoxx,dc=fr
+objectclass: top
+objectclass: organizationalUnit
+ou: Roles
+
+dn: uid=nmartignole,ou=People,dc=devoxx,dc=fr
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+uid: nmartignole
+cn: Nicolas
+sn: Martignole
+mail: nicolas@devoxxxxxxxx.fr
+userPassword: password
+
+dn: uid=agoncal,ou=People,dc=devoxx,dc=fr
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+uid: agoncal
+cn: Antonio
+sn: Goncalves
+mail: antonio@devoxxxxxxxx.fr
+userPassword: password
+
+dn: uid=zcadi,ou=People,dc=devoxx,dc=fr
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+uid: zcadi
+cn: Zouheir
+sn: Cadi
+mail: zouheir@devoxxxxxxxx.fr
+userPassword: password
+
+dn: cn=staff,ou=Roles,dc=devoxx,dc=fr
+objectclass: top
+objectclass: groupOfNames
+cn: staff
+member: uid=zcadi,ou=People,dc=devoxx,dc=fr
+member: uid=nmartignole,ou=People,dc=devoxx,dc=fr
+member: uid=agoncal,ou=People,dc=devoxx,dc=fr
+
+dn: ou=SystemAccounts,dc=devoxx,dc=fr
+objectclass: top
+objectclass: organizationalUnit
+ou: SystemAccounts
+
+dn: uid=keycloak,ou=SystemAccounts,dc=devoxx,dc=fr
+objectclass: top
+objectclass: account
+objectclass: simplesecurityobject
+uid: keycloak
+userPassword: password
+

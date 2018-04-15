@@ -20,6 +20,7 @@
 		<module>demos/beer-boot-app</module>
 		<module>demos/beer-rest</module>
 		<module>demos/beer-web-app</module>
+		<module>demos/ldap</module>
 	</modules>
 
 	<build>
