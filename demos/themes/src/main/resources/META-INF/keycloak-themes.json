@@ -1,0 +1,6 @@
+{
+    "themes": [{
+        "name" : "devoxx",
+        "types": [ "login", "account" ]
+    }]
+}
