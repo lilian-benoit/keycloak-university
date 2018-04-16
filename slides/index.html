@@ -101,7 +101,7 @@ class: middle, center, light
 
 # Pourquoi déléguer sa sécurité ? 
 
-![](assets/images/delegate.jpg)
+(assets/images/delegate.jpg)
 
 ---
 
@@ -525,6 +525,110 @@ Exemple d'assertion :
   </saml:AttributeStatement>
 </saml:Assertion>
 ```
+
+---
+class: middle, light
+
+# Installation et déploiement de  Keycloak (TODO)
+
+
+---
+class: middle, light
+
+# Keycloak en action
+
+> DEMO
+
+---
+class: middle, light
+
+# Keycloak en revue
+
+---
+class: middle, light
+
+# Notion de clients
+
+> Clients sont des entités qui font des requêtes d'authentification
+
+
+---
+class: middle, light
+
+# OpenID Connect vs SAML
+
+> OpentID Connect - Protocole à priviliéger pour les applications WEB HTML5/Javascript
+
+---
+class: middle, light
+
+# Différentes types d'accès
+
+- Client PUBLIC
+- Client CONFIDENTIEL
+- Client BEARER-ONLY
+
+---
+class: middle, light
+
+# Types d'accès en action
+
+> DEMO
+
+---
+class: middle, light
+
+# Redirect URLs
+
+Définition des URLS appelant.
+
+
+---
+class: middle, light
+
+# CORS
+
+> Cross-origin resource sharing
+
+---
+class: center, middle,  light, full
+
+![](assets/images/cors.png)
+
+---
+class: middle, light
+
+# Gestion des roles
+
+---
+class: middle, light
+
+# Les roles en action
+
+> DEMO
+
+---
+class: middle, light
+
+# Gestion des utilisateurs et des groupes
+
+> DEMO
+
+---
+class: middle, light
+
+# Politique de mots de passe
+
+> DEMO
+
+---
+class: middle, light
+
+# Sécurité supplémentaire
+
+* Support de OTP
+* Detection de force brtute
+
 ---
 class: middle, light
 
@@ -594,6 +698,83 @@ class: middle, light
 * Adaptateur Javascript
 * Servlet Filter
 * Proxy 
+
+
+---
+class: middle, light
+
+# Etendre Keycloak
+
+* Personnalisation d'un thème
+* Différentes SPI
+
+---
+class: middle, light
+
+# SPI
+
+> Service Provider Interfaces
+
+---
+class: middle, light
+
+# Développer son SPI
+
+* Implémenter son ProviderFactory
+* Implémenter son Provider
+* Définir META-INF/services/org.keycloak....ProviderFactory
+
+
+---
+class: middle, light
+
+# Déployer son SPI
+
+* Déposer l'archive dans deployments
+* Déployer via le système de module
+
+```
+KEYCLOAK_HOME/bin/jboss-cli.sh --command="module add 
+  --name=org.acme.provider --resources=target/provider.jar 
+  --dependencies=org.keycloak.keycloak-core,org.keycloak.keycloak-server-spi"
+```
+
+---
+class: middle, light
+
+# Authentification SPI
+
+* Authentification par défaut (client_id et client_secret)
+* Authentification par JWT
+
+
+---
+class: middle, light
+
+# Action Token SPI 
+
+Par exemple
+* Réinitialiser ses credentials
+* Confirmation de son adresse mail
+
+---
+class: middle, light
+
+# Event Listener SPI 
+
+* EventListenerProvider 
+* EventListenerProviderFactory 
+
+
+---
+class: middle, light
+
+# User Storage SPI 
+
+> Permet de définir d'une extension pour récupérer les utilisateurs et leurs mot de passe
+
+cas d'usage : Les utilisateurs sont dans une base de données propriétaires.
+
 
     </textarea>
     <script src="assets/js/remark.min.js" type="text/javascript">
