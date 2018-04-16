@@ -98,7 +98,7 @@ class BeerController {
         HttpFacade facade = new SimpleHttpFacade(request, response);
         KeycloakDeployment deployment = adapterDeploymentContext.resolveDeployment(facade);
         attributes.addAttribute("referrer", deployment.getResourceName());
-        return "redirect:" + deployment.getAccountUrl();
+        return "redirect:" + deployment.getAccountUrl() + "/password";
     }
 
 }
