@@ -304,7 +304,7 @@ class: middle, light
 
 # OAuth2.0: pas un SSO
 
-* Pour avoir des infornations sur l'utilisateur, je dois appeler une API non standard
+* Pour avoir des informations sur l'utilisateur, je dois appeler une API non standard
 * Si chtijug.org délégue à speaker.chtijug.org et events.chtijug.org, chacun doit appeler l'API du founisseur
 * Pas de "Single Sign Out"
 
@@ -369,7 +369,7 @@ class: middle, light
 # ID Token
 
 L'ID Token est fourni avec l'Access Token
-```
+```json
 {
  "access_token": "ya29.GlsQBRz-E5HEoo6KeQNsZQK-XazzgybwWXgOE0pIzYFu1jHu3y...",
  "token_type": "Bearer",
@@ -523,7 +523,7 @@ Exemple d'assertion :
 ---
 class: middle, light
 
-# Installation et déploiement de  Keycloak (TODO)
+# Installation et déploiement de  Keycloak
 
 
 ---
@@ -634,7 +634,7 @@ class: middle, light
 ---
 class: middle, light
 
-```
+```json
 {
   "auth-server-url": "http://localhost:8080/auth",
   "realm": "devoxx",
@@ -769,6 +769,10 @@ class: middle, light
 
 cas d'usage : Les utilisateurs sont dans une base de données propriétaires.
 
+---
+class: middle, light, center
+
+# End.
 
     </textarea>
     <script src="assets/js/remark.min.js" type="text/javascript">
