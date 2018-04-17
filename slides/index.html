@@ -12,18 +12,34 @@
         font-family: 'Gill Sans';
         font-weight: normal;
       }
+      h1 {
+          margin-top: 0px;
+          margin-bottom: 100px;
+      }
+      .twitter {
+          font-style: italic;
+          color: #42affa;
+      }
+
       .remark-notes {
         font-size: xx-large;
       }
       .remark-slide-content {
         font-size: xx-large;
       }
+      .intro {
+        background-image: url('assets/images/background_hdtv_1920_1080_v1.png');
+        background-size: contain;
+        color: white;
+      }
       .dark {
         background-image: url('assets/images/keycloak-bg.png');
         color: white;
       }
       .light {
-        background-image: url('assets/images/keycloak-bg-light.png');
+        /*background-image: url('assets/images/keycloak-bg-light.png');*/
+        background-image: radial-gradient( circle at 75% 25%, #FF4c4c, #7f1111 40% );
+        color: white;
       }
       .footnote {
         font-size: large;
@@ -43,10 +59,12 @@
       blockquote {
         font-style: italic;
         background-color: white;
+        color: black;
 
       }
       pre {
         background-color: white;
+        color: black;
         font-family: 'Ubuntu Mono';
         border: thin solid black;
         border-radius: 1ex;
@@ -56,6 +74,7 @@
         width: 100%;
         font-size: large;
         background-color: white;
+        color: black;
         border-collapse: collapse;
       }
       th,td {
@@ -76,74 +95,73 @@
   <body>
     <textarea id="source">
 
-class: center, middle, light
+class: center, middle, intro
 
 # Maitriser sa gestion de l'identité avec Keycloak
 
-## #DevoxxFR 2018
 ---
-class: middle, light
+class: light
 
 # Nous
 
-## Lilian Benoit
-## Sébastien Blanc
-## Thomas Recloux
+### Lilian Benoit .twitter[@Lilian_Benoit]
+### Sébastien Blanc .twitter[@sebi2706]
+### Thomas Recloux .twitter[@thomasrecloux]
 
 ---
 
-class: middle, center, light
+class:  center, light
 
 # Pourquoi déléguer sa sécurité ? 
 ![](assets/images/delegate.jpg)
 
 ---
 
-class: middle, center, light
+class:  center, middle, light
 
 # Economies d'échelle
 
 ---
 
-class: middle, center, light, full
+class:  middle, center, light, full
 
 ![](assets/images/login.jpg)
 
 ---
-class: middle, center, light, full
+class:  middle, center, light, full
 
 ![](assets/images/signup.png)
 
 ---
-class: middle, center, light, full
+class:  middle, center, light, full
 
 # Vous n'êtes pas expert en sécurité
 
 ---
-class: center, middle
+class: middle, center, middle
 
 ![](assets/images/tmobile.png)
 
 ---
-class: middle, center, light, full
+class:  middle, center, light, full
 
 ![](assets/images/amazingly.jpg)
 
 ---
 
-class: middle, center, light, full
+class:  middle, center, light, full
 
 ![](assets/images/keycloak.png)
 
 ---
-class: middle, center, light, full
+class:  middle, center, light, full
 
 # Redirect All the Things !
 
 ![](assets/images/redirect.png)
 
 ---
-class: middle, center, light, full
+class:  middle, center, light, full
 
 ![](assets/images/loginformkc.png)
 
@@ -153,7 +171,7 @@ class: middle, center, light, full
 ![](assets/images/stamp.png)
 
 ---
-class: middle, light
+class: light
 
 # Et si on causait protocole ?
 
@@ -163,7 +181,7 @@ class: middle, light
 
 ---
 
-class: middle, light
+class:  light
 
 # OpenID Connect 1.0
 
@@ -173,7 +191,7 @@ class: middle, light
 
 ---
 
-class: middle, light
+class:  light
 
 # OpenID Connect 1.0
 
@@ -181,7 +199,7 @@ class: middle, light
 
 ---
 
-class: middle, light
+class:  light
 
 # OAuth2.0
 
@@ -191,19 +209,19 @@ Protocole de délégation d'autorisation.
 
 ---
 
-class: middle, center, full
+class:  center, full
 
 ![OAuth2 register step 1](assets/images/oauth2-register-github-1.png)
 
 ---
 
-class: middle, center, full-with-title-and-footnote
+class:  center, full-with-title-and-footnote
 
 ![OAuth2 register step 2](assets/images/oauth2-register-github-2.png)
 
 ---
 
-class: middle, light
+class:  light
 
 # OAuth2.0
 
@@ -221,13 +239,13 @@ Location: https://github.com/login/oauth/authorize \
 ```
 ---
 
-class: middle, center, full
+class:  center, full
 
 ![OAuth2 authorize](assets/images/oauth2-github-authorize.png)
 
 ---
 
-class: middle, light
+class:  light
 
 # OAuth2.0
 
@@ -243,7 +261,7 @@ Location: https://chtijug.org/oauth2/github/callback\
 
 ---
 
-class: middle, light
+class:  light
 
 # OAuth2.0
 
@@ -266,7 +284,7 @@ curl -H "Accept: application/json" \
 ```
 ---
 
-class: middle, light
+class:  light
 
 # OAuth2.0
 
@@ -295,12 +313,12 @@ curl -H "Authorization: Bearer 34a8a4e387f9c68f611183497c0969d" \
 
 ---
 
-class: middle, center, full
+class:  center, full
 
 ![oauth2 flow](assets/images/oauth2-flow.png)
 
 ---
-class: middle, light
+class:  light
 
 # OAuth2.0: pas un SSO
 
@@ -309,7 +327,7 @@ class: middle, light
 * Pas de "Single Sign Out"
 
 ---
-class: middle, light
+class:  light
 
 # JSON Web Token (JWT)
 
@@ -321,13 +339,13 @@ Format de transport de données signé
 
 ---
 
-class: middle, center, full
+class:  center, full
 
 ![jwt.io](assets/images/jwt.io.png)
 
 ---
 
-class: middle, light
+class:  light
 
 # OpenID Connect
 
@@ -340,7 +358,7 @@ OpenID Connect = Oauth2 + IDToken + JWT +
 
 ---
 
-class: middle, light
+class:  light
 
 # ID Token
 
@@ -364,7 +382,7 @@ JSON Web Token fourni en plus de l'Access Token, le nom des attributs est normal
 
 ---
 
-class: middle, light
+class:  light
 
 # ID Token
 
@@ -379,7 +397,7 @@ L'ID Token est fourni avec l'Access Token
 ```
 
 ---
-class: middle, light
+class:  light
 
 # Discovery
 
@@ -404,7 +422,7 @@ curl http://localhost:8080/auth/realms/chtijug/.well-known/openid-configuration
 ```
 ---
 
-class: middle, light
+class:  light
 
 # JSON Wek Keys (JWK)
 
@@ -424,7 +442,7 @@ curl http://localhost:8080/auth/realms/chtijug/protocol/openid-connect/certs
 
 ---
 
-class: middle, light
+class:  light
 
 # Refresh Token
 
@@ -444,7 +462,7 @@ Dilemme: vérifier régulièrement les droits sans recommencer la procédure ini
 ```
 ---
 
-class: middle, light
+class:  light
 
 # SAML 2.0
 > Protocole ouvert et standardisé pour l'échange des informations d'authentification et d'autorisation entre des entités
@@ -452,7 +470,7 @@ class: middle, light
 
 ---
 
-class: middle, light
+class:  light
 
 # SAML 2.0
 > Security Assertion Markup Language
@@ -466,7 +484,7 @@ Standard approuvé par le consortium ![https://wiki.oasis-open.org/security/Fron
 
 ---
 
-class: middle, light
+class:  light
 
 # SAML 2.0
 
@@ -477,13 +495,13 @@ Deux rôles :
 
 ---
 
-class: middle, center, full
+class:  center, full
 
 ![SAML Protocol](assets/images/saml_protocol.png)
 
 ---
 
-class: middle, light
+class:  light
 
 # Avantages de SAML 2.0
 
@@ -494,7 +512,7 @@ class: middle, light
 
 ---
 
-class: middle, light
+class:  light
 
 # Concepts de SAML 2.0
 
@@ -585,7 +603,7 @@ class: middle, light
 > Cross-origin resource sharing
 
 ---
-class: center, middle,  light, full
+class: center, middle, full
 
 ![](assets/images/cors.png)
 
@@ -694,7 +712,7 @@ class: middle, light
 * Proxy 
 
 ---
-class: middle, light
+class: light
 
 # Courtage d'identité / Social Login
 
@@ -703,7 +721,7 @@ class: middle, light
 * SAML
 
 ---
-class: middle, light
+class:  light
 
 # Fédération du stockage
 
@@ -712,7 +730,7 @@ class: middle, light
 
 
 ---
-class: middle, light
+class: light
 
 # Etendre Keycloak
 
@@ -727,7 +745,7 @@ class: middle, light
 > Service Provider Interfaces
 
 ---
-class: middle, light
+class: light
 
 # Développer son SPI
 
@@ -737,7 +755,7 @@ class: middle, light
 
 
 ---
-class: middle, light
+class:  light
 
 # Déployer son SPI
 
@@ -751,7 +769,7 @@ KEYCLOAK_HOME/bin/jboss-cli.sh --command="module add
 ```
 
 ---
-class: middle, light
+class:  light
 
 # Authentification SPI
 
@@ -760,7 +778,7 @@ class: middle, light
 
 
 ---
-class: middle, light
+class:  light
 
 # Action Token SPI 
 
@@ -769,7 +787,7 @@ Par exemple
 * Confirmation de son adresse mail
 
 ---
-class: middle, light
+class:  light
 
 # Event Listener SPI 
 
@@ -778,7 +796,7 @@ class: middle, light
 
 
 ---
-class: middle, light
+class:  light
 
 # User Storage SPI 
 
