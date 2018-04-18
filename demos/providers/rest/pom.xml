@@ -21,6 +21,7 @@
         <artifactId>keycloak-examples-providers-parent</artifactId>
         <groupId>org.keycloak</groupId>
         <version>3.4.3.Final</version>
+        <relativePath/>
     </parent>
 
     <name>REST Example</name>

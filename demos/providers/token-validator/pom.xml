@@ -21,6 +21,7 @@
         <artifactId>keycloak-experimental-parent</artifactId>
         <groupId>org.keycloak.experimental</groupId>
         <version>4.0.0.CR1-SNAPSHOT</version>
+        <relativePath/>
     </parent>
 
     <name>Token Validation</name>

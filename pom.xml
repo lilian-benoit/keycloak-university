@@ -21,6 +21,9 @@
 		<module>demos/beer-rest</module>
 		<module>demos/beer-web-app</module>
 		<module>demos/ldap</module>
+		<module>demos/providers/rest</module>
+		<module>demos/providers/token-validator</module>
+		<module>demos/themes</module>
 	</modules>
 
 	<build>
